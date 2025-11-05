@@ -2,19 +2,29 @@
 using namespace std;
 
 int main() {
-	int detik;
-	
-	cout<<"Masukkan angka >1 (dalam satuan detik) =";
-	cin>>detik;
-	
-	long long jam = detik / 3600;
-	long long sisa_detik = detik % 3600;
-	long long menit = sisa_detik / 60;
-	long long detik_akhir = sisa_detik % 60;
-	
-	cout<<endl;
-	cout<<"Hasil Konversi :"<<endl;
-	cout<<detik<<" "<<"Detik ="<<" "<<jam<<" "<<"Jam, "<<menit<<" "<<"Menit, "<<detik_akhir<<" "<<"Detik, "<<endl;
-	
-	return 0;
+	int detik_input;
+
+cout<<"Masukkan bilangan >1 (satuan detik)"<<endl;
+cin>>detik_input;
+int jam= 0, menit= 0, detik = 0;
+
+while (detik_input >= 3600){
+	 jam++;
+    detik_input -= 3600;
 }
+
+while (detik_input >= 60){
+	menit++;
+	    detik_input -= 60;
+
+}
+detik = detik_input;
+
+cout<<"\nHasil Konversi:"<<endl;
+cout<<jam<<"jam"<<endl;
+cout<<menit<<"menit"<<endl;
+cout<<detik<<"Detik"<<endl;
+
+return 0;
+}
+
